@@ -1,6 +1,13 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 var path = require('path')
 
+//获取命令行传入的端口号
+var args = process.argv;
+var portArg = args.find(function(arg){
+  return arg.indexOf('--port') >= 0;
+})
+var port = portArg && portArg.split('=')[1] || 80;
+
 module.exports = {
   build: {
     env: require('./prod.env'),
@@ -23,7 +30,7 @@ module.exports = {
   },
   dev: {
     env: require('./dev.env'),
-    port: 8080,
+    port: port,
     autoOpenBrowser: true,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
