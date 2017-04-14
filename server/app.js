@@ -1,5 +1,5 @@
 //服务js
-const pkg = require('./package')
+const pkg = require('../package')
 const config = require('./config/db')
 const express = require('express')
 const favicon = require('serve-favicon')
